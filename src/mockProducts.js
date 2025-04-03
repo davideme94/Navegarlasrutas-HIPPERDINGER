@@ -1,25 +1,47 @@
 const products = [
-    { id: "1", title: "Camiseta Boca", category: "futbol", price: 10000, description: "Camiseta original Boca Juniors" },
-    { id: "2", title: "Pelota Adidas", category: "futbol", price: 6000, description: "Pelota profesional" },
-    { id: "3", title: "Remera Running", category: "deportes", price: 7000, description: "Remera liviana para correr" },
-    { id: "4", title: "Zapatillas Trail", category: "deportes", price: 15000, description: "Para montaña y tierra" },
-  ];
-  
-  export const getProducts = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(products), 1000);
-    });
-  };
-  
-  export const getProductById = (id) => {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(products.find((p) => p.id === id)), 1000);
-    });
-  };
-  
-  export const getProductsByCategory = (categoryId) => {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(products.filter((p) => p.category === categoryId)), 1000);
-    });
-  };
-  
+  {
+    id: "1",
+    title: "Mouse Logitech G203",
+    category: "mouses",
+    price: 8500,
+    description: "Mouse gamer RGB con luces LED y sensor óptico.",
+    stock: 10,
+    image: "https://www.xt-pc.com.ar/img/productos/14/MOU454.jpg"
+  },
+  {
+    id: "2",
+    title: "Teclado Redragon Kumara",
+    category: "teclados",
+    price: 15000,
+    description: "Teclado mecánico retroiluminado, switches Outemu.",
+    stock: 5,
+    image: "https://gorilagames.com/img/Public/1019-producto-redragon-kumara-rgb-2894.jpg"
+  },
+  {
+    id: "3",
+    title: "Parlantes Logitech Z313",
+    category: "parlantes",
+    price: 13000,
+    description: "Sistema de sonido 2.1 con subwoofer compacto.",
+    stock: 8,
+    image: "https://m.media-amazon.com/images/I/81wcaJsMCTL._AC_SL1500_.jpg"
+  },
+  {
+    id: "4",
+    title: "Impresora HP Ink Tank",
+    category: "impresoras",
+    price: 35000,
+    description: "Impresora multifunción con WiFi, impresión económica.",
+    stock: 3,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFNkG9VEJc4HgdhOL4sHPca8yAOqWznYALJQ&s"
+  }
+];
+
+export const getProducts = () =>
+  new Promise((resolve) => setTimeout(() => resolve(products), 1000));
+
+export const getProductById = (id) =>
+  new Promise((resolve) => setTimeout(() => resolve(products.find(p => p.id === id)), 1000));
+
+export const getProductsByCategory = (categoryId) =>
+  new Promise((resolve) => setTimeout(() => resolve(products.filter(p => p.category === categoryId)), 1000));

@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
   useEffect(() => {
-    getProductById(itemId).then((res) => setProduct(res));
+    getProductById(itemId).then(setProduct);
   }, [itemId]);
 
   return (
@@ -19,3 +19,4 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
+
