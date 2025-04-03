@@ -1,14 +1,20 @@
-import React from "react";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 const App = () => {
   return (
-    <div>
+    <>
       <NavBar />
-      <ItemListContainer mensaje="¡Bienvenidos a nuestra tienda!" />
-    </div>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+        <Route path="*" element={<h2 className="text-center mt-5 pt-5">404 - Página no encontrada</h2>} />
+      </Routes>
+    </>
   );
 };
 
